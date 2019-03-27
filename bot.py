@@ -177,6 +177,7 @@ async def findworld(ctx, type):
     await client.say('https://growtopiagame.com/worlds/'f'{type}.png')
 
 @client.command(pass_context=True)
+@commands.has_permissions(administrator_members=True)
 async def mute(ctx,target:discord.Member):
       role=discord.utils.get(ctx.message.server.roles,name='Muted')
  
@@ -185,6 +186,7 @@ async def mute(ctx,target:discord.Member):
       await client.send_message(target,'**You Get Mute!**')
         
 @client.command(pass_context=True)
+@commands.has_permissions(administrator_members=True)
 async def unmute(ctx,target:discord.Member):
       role=discord.utils.get(ctx.message.server.roles,name='Muted')
  
